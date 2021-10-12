@@ -1,0 +1,92 @@
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.header {
+    flex-basis: 100%;
+    max-height: 15%;
+}
+
+.sidebar {
+    flex-basis: 30%;
+    min-height: 70%;
+}
+
+.content {
+    flex-basis: 70%;
+    min-height: 70%;
+}
+
+.footer {
+    flex-basis: 100%;
+    max-height: 15%;
+}
+
+
+/* ------------header------------ */
+
+header {
+    display: flex;
+    /* justify-content: flex-end; */
+    align-items: center;
+}
+
+header div:first-child {
+    margin-right: auto;
+    cursor: pointer;
+}
+
+header div:nth-child(n+2) {
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid white;
+    margin-left: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+header div:nth-child(n+2):hover {
+    background-color: white;
+    color: black;
+}
+
+
+/* class pour le JS */
+
+.click {
+    background-color: white;
+    color: black;
+}
+
+.logo {
+    min-width: 40px;
+    min-height: 40px;
+    background-image: url(./img/telescope.png);
+    background-size: cover;
+}
+
+
+/* -----------------media query------------------- */
+
+@media screen and (max-width:750px) {
+    .header {
+        flex-basis: 100%;
+    }
+    header>a:nth-child(n+2) {
+        display: none;
+    }
+    .sidebar {
+        flex-basis: 100%;
+        min-height: 0;
+        order: 1;
+    }
+    .content {
+        flex-basis: 100%;
+        padding: 26px 10px;
+    }
+    .footer {
+        flex-basis: 100%;
+        order: 2;
+    }
+}
